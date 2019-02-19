@@ -11,13 +11,20 @@ document.querySelectorAll('.editor').forEach(editor => editor.addEventListener('
 //update text (or style) of sibling
 function handleEditorInput(event) {
 
-    console.log(event.target);
+
+    const textElement = event.currentTarget.parentNode.querySelector('.text-element');
 
     if(event.target.type === 'text' || 
         event.target.tagName === 'TEXTAREA'){
-            const textElement = event.currentTarget.parentNode.querySelector('.text-element');
             const text = event.target.value;
             textElement.innerText = text;
+            
+        } else {
+
+            //handle the styles
+            const { value, name: styleName } = event.target;
+            const unit = event.target.dataset.unit || '';
+            textElement.style[styleName] = `${value}${unit}`;
             
         }
 
