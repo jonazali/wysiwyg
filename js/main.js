@@ -1,4 +1,5 @@
 import toggleActive from "./toggleActive.js";
+import addParagraph from "./addParagraph.js";
 
 
 // add event listener (Click) to each buttons
@@ -9,7 +10,7 @@ document.querySelectorAll('.edit-button').forEach(button => button.addEventListe
 document.querySelectorAll('.editor').forEach(editor => editor.addEventListener('input', handleEditorInput));
 
 //update text (or style) of sibling
-function handleEditorInput(event) {
+export function handleEditorInput(event) {
 
 
     const textElement = event.currentTarget.parentNode.querySelector('.text-element');
@@ -29,3 +30,5 @@ function handleEditorInput(event) {
         }
 
 }
+
+document.getElementById('add-button').addEventListener('click', addParagraph );
