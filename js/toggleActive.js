@@ -11,4 +11,7 @@ export default function toggleActive(event) {
     console.log(editableText);
     //toggle the class active (on some element)
     editableText.classList.toggle('active');
+
+    document.querySelector('.save-button').style.display = "block";
+
 }
