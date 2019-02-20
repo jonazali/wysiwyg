@@ -1,0 +1,45 @@
+wysiwyg-editor {
+    display: block;
+    width: 80%;
+    max-height: 0;
+    margin: auto;
+    overflow: hidden;
+    transition: all 500ms;
+  }
+  
+  wysiwyg-editable-text.active wysiwyg-editor {
+    max-height: 10rem;
+    padding-top: 1rem;
+  }
+  
+  wysiwyg-editor input[type="text"],
+  wysiwyg-editor textarea {
+    width: 100%;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  
+  wysiwyg-editor .styles {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+  }
+  
+  wysiwyg-editor label {
+    font-size: 0.85rem;
+  }
+  
+  wysiwyg-editor .styles input {
+    max-width: 40px;
+  }
+  
+  wysiwyg-editor input[type="color"] {
+    vertical-align: middle;
+  }
+  
+  wysiwyg-editor .styles .form-group:not(:last-child) {
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: 1px solid rgb(218, 220, 224);
+  }
+  

@@ -1,16 +1,25 @@
 import toggleActive from "./toggleActive.js";
 import addParagraph from "./addParagraph.js";
 
+import Editor from './components/Editor.js';
+import EditableText from "./components/EditableText.js";
+
+customElements.define('wysiwyg-editor', Editor);
+customElements.define('wysiwyg-editable-text', EditableText);
+
 
 // add event listener (Click) to each buttons
 // select edit button
-document.querySelectorAll('.edit-button').forEach(button => button.addEventListener('click', toggleActive));
+// document.querySelectorAll('.edit-button').forEach(button => button.addEventListener('click', toggleActive));
 // listen for input events from editor
 // when fired, update text (or style)
 document.querySelectorAll('.editor').forEach(editor => editor.addEventListener('input', handleEditorInput));
 
 //update text (or style) of sibling
-export function handleEditorInput(event) {
+
+document.getElementById('add-button').addEventListener('click', addParagraph );
+
+function handleEditorInput(event) {
 
 
     const textElement = event.currentTarget.parentNode.querySelector('.text-element');
@@ -30,5 +39,3 @@ export function handleEditorInput(event) {
         }
 
 }
-
-document.getElementById('add-button').addEventListener('click', addParagraph );
