@@ -1,11 +1,10 @@
-export default class Editor extends HTMLElement{
+export default class Editor extends HTMLElement {
+  connectedCallback() {
+    this.render();
+  }
 
-    connectedCallback(){
-        this.render();
-    }
-
-    render(){
-        this.innerHTML=`
+  render() {
+    this.innerHTML = `
         <textarea cols="40" rows="5">Go ahead, edit me however you want!</textarea>
 
         <section class="styles">
@@ -35,7 +34,5 @@ export default class Editor extends HTMLElement{
           </div>
         </section>
         `;
-    }
-
-
+  }
 }

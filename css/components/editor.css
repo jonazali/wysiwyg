@@ -7,7 +7,8 @@ wysiwyg-editor {
     transition: all 500ms;
   }
   
-  wysiwyg-editable-text.active wysiwyg-editor {
+  wysiwyg-editable-text[active] wysiwyg-editor,
+  wysiwyg-editable-heading[active] wysiwyg-editor {
     max-height: 10rem;
     padding-top: 1rem;
   }

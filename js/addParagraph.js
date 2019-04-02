@@ -3,5 +3,5 @@ export default function addParagraph() {
     const newEditableText = document.createElement('wysiwyg-editable-text');
     newEditableText.className = 'editable-text';
     //append that to main (before our button)
-    document.querySelector('main').insertBefore(newEditableText, event.target);
+    document.querySelector('main').append(newEditableText, event.target);
 }
